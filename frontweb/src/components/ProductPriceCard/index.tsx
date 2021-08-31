@@ -1,11 +1,15 @@
 import "./styles.css";
 
-const ProductPriceCard = () => {
+type Props ={
+  price:number;
+}
+
+const ProductPriceCard = ({ price } : Props) => {
   return (
     <>
       <div className="product-price-container">
         <span>R$</span>
-        <h3>2345.67</h3>
+        <h3>{price}</h3>
       </div>
     </>
   );
