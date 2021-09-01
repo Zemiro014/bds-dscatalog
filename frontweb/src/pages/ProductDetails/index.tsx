@@ -1,5 +1,6 @@
 import { ReactComponent as SetaIcon } from 'assets/images/Seta.svg';
 import ProductPriceCard from 'components/ProductPriceCard';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -7,10 +8,12 @@ const ProductDetails = () => {
     return(
         <div className="product-details-container">
             <div className="base-card product-details-card">
-                <div className="goback-container">
-                    <SetaIcon />
-                    <h2>Voltar</h2>
-                </div>
+                <Link to="/products">
+                    <div className="goback-container">
+                        <SetaIcon />
+                        <h2>Voltar</h2>
+                    </div>
+                </Link>
                 <div className="row">
                     <div className="col-xl-6">
                         <div className="img-container">

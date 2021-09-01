@@ -10,9 +10,6 @@
     align-items: center;
     margin-bottom: 20px;
 }
-.goback-container :hover{
-    cursor: pointer;
-}
 .goback-container svg{
  color: #407BFF;
  margin-left: 10px;
