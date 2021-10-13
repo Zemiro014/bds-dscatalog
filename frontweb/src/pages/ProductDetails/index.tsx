@@ -2,19 +2,25 @@ import { ReactComponent as SetaIcon } from "assets/images/Seta.svg";
 import axios from "axios";
 import ProductPriceCard from "components/ProductPriceCard";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Product } from "types/product";
 import { BASE_URL } from "util/requests";
 
 import "./styles.css";
 
+type urlParams = {
+    productId: string;
+}
+
 const ProductDetails = () => {
+  const { productId } = useParams<urlParams>();
   const [product, setProduct] = useState<Product | null>(null);
+
   useEffect(() => {
-    axios.get<Product>(BASE_URL + "/products/1").then((res) => {
+    axios.get<Product>(`${BASE_URL}/products/${productId}`).then((res) => {
       setProduct(res.data);
     });
-  }, []);
+  }, [productId]);
 
   return (
     <div className="product-details-container">
